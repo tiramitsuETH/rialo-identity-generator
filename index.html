@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rialo Identity Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Rialo Identity Generator</h1>
+      <p>Discover your unofficial Rialo identity for Phase 2.</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <div class="card-header">
+          <span class="badge">Rialo Member Card</span>
+        </div>
+
+        <div class="card-body">
+          <label for="nameInput" class="label">
+            Your name / alias (optional)
+          </label>
+          <input
+            type="text"
+            id="nameInput"
+            placeholder="e.g. Noble, Orca, Ilham..."
+          />
+
+          <div class="identity-section">
+            <div class="row">
+              <span class="field-label">Identity:</span>
+              <span id="identityValue" class="field-value">-</span>
+            </div>
+            <div class="row">
+              <span class="field-label">Role:</span>
+              <span id="roleValue" class="field-value">-</span>
+            </div>
+            <div class="row">
+              <span class="field-label">Vibe:</span>
+              <span id="vibeValue" class="field-value">-</span>
+            </div>
+            <div class="row">
+              <span class="field-label">Affinity:</span>
+              <span id="affinityValue" class="field-value">-</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button id="generateButton">Generate Identity</button>
+          <p class="disclaimer">
+            This is a fan-made tool for fun and community vibes. Not an official
+            Rialo role system.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Built for Rialo Phase 2 ·
+        <a href="https://github.com/USERNAME/rialo-identity-generator" target="_blank">
+          View on GitHub
+        </a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
