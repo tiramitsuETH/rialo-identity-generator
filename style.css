@@ -100,7 +100,7 @@ button:disabled {
 .card-name {
   position: absolute;
   left: 50%;
-  top: 70%;                 /* tweak angka ini kalau mau lebih naik/turun */
+  top: 65%;                 /* tweak angka ini kalau mau lebih naik/turun */
   transform: translate(-50%, -50%);
   font-size: 32px;
   font-weight: 900;
