@@ -1,32 +1,22 @@
-// Arrays kemungkinan nilai untuk tiap field
-const roles = [
-  "Explorer",
-  "Builder",
-  "Strategist",
-  "Archivist",
-  "Yapper",
-  "Observer",
-];
-
 const vibes = [
   "Chill contributor",
-  "DeFi degen (responsible version)",
+  "DeFi degen (responsible)",
   "Quiet builder",
   "Lore enjoyer",
-  "Automation nerd",
+  "Automation enjoyer",
   "Points optimizer",
+  "Data-driven yapper",
 ];
 
 const affinities = [
   "On-chain automation",
   "Cross-chain workflows",
   "Community experiments",
-  "Data-driven decisions",
   "Game-like incentives",
-  "Long-term alignment",
+  "Alignment over hype",
+  "Long-term participation",
 ];
 
-// Util simple untuk ambil random element
 function pickRandom(list) {
   const index = Math.floor(Math.random() * list.length);
   return list[index];
@@ -34,39 +24,29 @@ function pickRandom(list) {
 
 function generateIdentity() {
   const nameInput = document.getElementById("nameInput");
-  const identityValue = document.getElementById("identityValue");
+  const roleInput = document.getElementById("roleInput");
+
+  const nameValue = document.getElementById("nameValue");
   const roleValue = document.getElementById("roleValue");
   const vibeValue = document.getElementById("vibeValue");
   const affinityValue = document.getElementById("affinityValue");
 
-  const rawName = nameInput.value.trim();
+  const name = nameInput.value.trim();
+  const role = roleInput.value.trim();
 
-  // Kalau user isi nama, pakai. Kalau tidak, generate alias simple
-  let identity;
-  if (rawName) {
-    identity = rawName;
-  } else {
-    const randomAliasPrefixes = ["Orb", "Node", "Signal", "Relay", "Echo"];
-    const randomAliasSuffixes = ["_rialo", "_orca", "_phase2", "_bot", "_yap"];
+  // Kalau nama kosong, kita tetap isi sesuatu biar kartunya nggak kosong banget
+  const finalName = name || "Unnamed Rialo Member";
+  const finalRole = role || "Member";
 
-    identity =
-      pickRandom(randomAliasPrefixes) +
-      pickRandom(randomAliasSuffixes) +
-      "#" +
-      Math.floor(Math.random() * 999).toString().padStart(3, "0");
-  }
-
-  identityValue.textContent = identity;
-  roleValue.textContent = pickRandom(roles);
+  nameValue.textContent = finalName;
+  roleValue.textContent = finalRole;
   vibeValue.textContent = pickRandom(vibes);
   affinityValue.textContent = pickRandom(affinities);
 }
 
-// Pas tombol di klik
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.getElementById("generateButton");
   button.addEventListener("click", generateIdentity);
 
-  // Generate awal sekali biar nggak kosong
-  generateIdentity();
+  // Tidak auto-generate, jadi awalnya benar-benar kosong (tanpa "-")
 });
