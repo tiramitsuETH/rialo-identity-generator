@@ -153,7 +153,7 @@ twitterBtn.addEventListener("click", async () => {
       ]);
 
       alert(
-        "Card sudah dicopy ke clipboard.\nSetelah tab Twitter terbuka, tekan Ctrl+V di kotak tweet untuk menempelkan gambarnya."
+        "The card has been copied to the clipboard.\nOnce the Twitter tab opens, press Ctrl+V in the tweet box to paste the image."
       );
     } else {
       // fallback: download file supaya bisa di-attach manual
@@ -169,13 +169,13 @@ twitterBtn.addEventListener("click", async () => {
       link.click();
 
       alert(
-        "Browser tidak mendukung copy gambar ke clipboard.\nCard sudah di-download, silakan attach PNG-nya di Twitter."
+        "The browser does not support copying images to the clipboard.\nThe card has been downloaded, please attach the PNG to Twitter."
       );
     }
   } catch (err) {
     console.error(err);
     alert(
-      "Gagal memproses gambar untuk Twitter. Nanti attach card-nya manual ya."
+      "Failed to process image for Twitter. Please attach the card manually later."
     );
   }
 
