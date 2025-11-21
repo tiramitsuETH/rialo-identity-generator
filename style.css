@@ -25,10 +25,16 @@ h1 {
   margin-bottom: 20px;
 }
 
+label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
 input, select {
   width: 100%;
   padding: 10px;
-  margin-top: 4px;
   margin-bottom: 12px;
   border-radius: 8px;
   border: 1px solid #bbb;
@@ -37,39 +43,77 @@ input, select {
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border: none;
   background: black;
   color: white;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  margin-top: 4px;
 }
 
-button:hover {
-  opacity: 0.8;
+button:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#downloadBtn {
+  background: #333;
+  font-size: 13px;
 }
 
 .card-output {
   margin-top: 20px;
 }
 
+/* ------- CARD + ANIMASI ------- */
+
 .card-box {
   position: relative;
   display: inline-block;
+  border-radius: 14px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.card-box.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .card-box img {
-  width: 100%;
-  border-radius: 12px;
+  display: block;
+  width: 640px;   /* sesuaikan dengan ukuran card kamu */
+  max-width: 100%;
 }
+
+/* POSISI NAMA DI TENGAH CARD  */
+/* Atur top: % kalau mau geser naik/turun */
 
 .card-name {
   position: absolute;
-  bottom: 28%;
   left: 50%;
-  transform: translateX(-50%);
+  top: 63%;                 /* tweak angka ini kalau mau lebih naik/turun */
+  transform: translate(-50%, -50%);
   font-size: 32px;
   font-weight: 900;
-  color: black;
+  color: #000000;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Biar nama panjang nggak keluar dari card */
+@media (max-width: 480px) {
+  .card-name {
+    font-size: 22px;
+    max-width: 90%;
+    white-space: normal;
+  }
 }
