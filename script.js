@@ -127,7 +127,13 @@ twitterBtn.addEventListener("click", async () => {
     return;
   }
 
-  const tweetText = `My Role Card Rialo\nNAME: ${name}\nROLE: ${role}\n\n#Rialo`;
+  const tweetText = `My Role Card Rialo
+NAME : ${name}
+ROLE : ${role}
+
+Check your card : https://tiramitsueth.github.io/rialo-identity-generator/
+
+@RialoHQ`;
   const intentUrl =
     "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweetText);
 
