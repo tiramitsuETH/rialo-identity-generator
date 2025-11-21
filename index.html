@@ -24,8 +24,11 @@
         <option value="club">Rialo Club Member</option>
       </select>
 
-      <button id="generateBtn">Generate Card</button>
-      <button id="downloadBtn" disabled>Download PNG</button>
+      <!-- tombol utama -->
+      <button id="generateBtn" class="primary-btn">Generate Card</button>
+      <!-- tombol ini disembunyikan dulu, nanti dimunculkan setelah generate -->
+      <button id="downloadBtn" class="secondary-btn hidden">Download PNG</button>
+      <button id="twitterBtn" class="secondary-btn hidden">Share to Twitter</button>
     </div>
 
     <div class="card-output" id="cardOutput">
