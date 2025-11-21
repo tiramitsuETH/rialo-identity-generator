@@ -17,13 +17,13 @@ body {
 
 .app-container {
   width: 100%;
-  max-width: 480px;
+  max-width: 520px;
   padding: 24px 16px;
 }
 
 header {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 header h1 {
@@ -38,38 +38,20 @@ header p {
   color: #9ca3af;
 }
 
-.card {
-  background: linear-gradient(135deg, #0b1120, #020617);
-  border-radius: 18px;
-  padding: 18px 16px;
+/* FORM DI ATAS KARTU */
+
+.form-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 16px;
+  padding: 14px 14px 12px;
   border: 1px solid rgba(148, 163, 184, 0.4);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
-}
-
-.card-header {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10px;
-}
-
-.badge {
-  font-size: 0.7rem;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #e5e7eb;
-}
-
-.card-body {
   margin-bottom: 14px;
 }
 
 .label {
   display: block;
   font-size: 0.8rem;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   color: #a1a1aa;
 }
 
@@ -82,6 +64,7 @@ input[type="text"] {
   color: #e5e7eb;
   outline: none;
   font-size: 0.9rem;
+  margin-bottom: 8px;
 }
 
 input[type="text"]::placeholder {
@@ -92,40 +75,7 @@ input[type="text"]:focus {
   border-color: #e5e7eb;
 }
 
-.identity-section {
-  margin-top: 14px;
-  padding: 10px 10px;
-  border-radius: 12px;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px dashed rgba(148, 163, 184, 0.7);
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
-
-.row:last-child {
-  margin-bottom: 0;
-}
-
-.field-label {
-  font-size: 0.8rem;
-  color: #9ca3af;
-}
-
-.field-value {
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.card-footer {
-  margin-top: 10px;
-  text-align: center;
-}
-
-button#generateButton {
+#generateButton {
   width: 100%;
   padding: 9px 0;
   border-radius: 999px;
@@ -138,22 +88,149 @@ button#generateButton {
   transition: transform 0.08s ease, box-shadow 0.08s ease,
     filter 0.08s ease;
   box-shadow: 0 12px 30px rgba(34, 197, 94, 0.35);
+  margin-top: 2px;
 }
 
-button#generateButton:hover {
+#generateButton:hover {
   transform: translateY(-1px);
   filter: brightness(1.05);
 }
 
-button#generateButton:active {
+#generateButton:active {
   transform: translateY(1px);
   box-shadow: 0 6px 16px rgba(34, 197, 94, 0.3);
 }
 
-.disclaimer {
-  margin-top: 8px;
+/* KARTU IDENTITAS */
+
+.card {
+  position: relative;
+  background: radial-gradient(circle at top left, #0f172a, #020617 55%);
+  border-radius: 20px;
+  padding: 16px 16px 12px;
+  border: 1px solid rgba(129, 140, 248, 0.5);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+/* strip kecil di atas kartu */
+.card-top-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #22c55e, #a855f7, #38bdf8);
+}
+
+/* efek pattern tipis */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.28) 1px, transparent 0);
+  background-size: 18px 18px;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.card-header,
+.card-body,
+.card-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.brand-subtitle {
   font-size: 0.7rem;
-  color: #6b7280;
+  color: #9ca3af;
+}
+
+.chip {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(129, 140, 248, 0.7);
+  background: rgba(15, 23, 42, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+/* BODY KARTU */
+
+.card-body {
+  margin-top: 4px;
+}
+
+.name-block {
+  margin-bottom: 8px;
+}
+
+.label-small {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.name-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.role-block {
+  margin-bottom: 10px;
+}
+
+.role-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  display: inline-block;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr;
+  gap: 8px;
+}
+
+.info-text {
+  margin-top: 2px;
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+
+.card-footer {
+  margin-top: 10px;
+}
+
+.footer-note {
+  font-size: 0.7rem;
+  color: #9ca3af;
 }
 
 footer {
@@ -178,6 +255,10 @@ footer a:hover {
   }
 
   .card {
-    padding: 14px 12px;
+    padding: 14px 12px 10px;
+  }
+
+  .name-text {
+    font-size: 1.15rem;
   }
 }
