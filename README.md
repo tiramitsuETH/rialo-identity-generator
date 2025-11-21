@@ -33,4 +33,4 @@ Just open `index.html` in your browser.
 
 ## Credits
 
-Built by a community member for discovery and fun in Rialo Phase 2.
+Built by a community member for discovery and fun in Rialo.
