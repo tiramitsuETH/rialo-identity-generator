@@ -10,51 +10,71 @@
   <div class="app-container">
     <header>
       <h1>Rialo Identity Generator</h1>
-      <p>Discover your unofficial Rialo identity for Phase 2.</p>
+      <p>Generate a fun, fan-made identity card for Phase 2.</p>
     </header>
 
     <main>
+      <div class="form-card">
+        <label for="nameInput" class="label">
+          Name / Alias
+        </label>
+        <input
+          type="text"
+          id="nameInput"
+          placeholder="e.g. Ilham, Noble, Orca..."
+        />
+
+        <label for="roleInput" class="label">
+          Discord Role
+        </label>
+        <input
+          type="text"
+          id="roleInput"
+          placeholder="e.g. OG, Core, Member, Mod..."
+        />
+
+        <button id="generateButton">Generate Identity</button>
+      </div>
+
+      <!-- KARTU IDENTITAS -->
       <div class="card">
+        <div class="card-top-strip"></div>
+
         <div class="card-header">
-          <span class="badge">Rialo Member Card</span>
+          <div class="card-brand">
+            <span class="brand-title">RIALO</span>
+            <span class="brand-subtitle">Phase 2 · Unofficial</span>
+          </div>
+          <span class="chip">Member ID</span>
         </div>
 
         <div class="card-body">
-          <label for="nameInput" class="label">
-            Your name / alias (optional)
-          </label>
-          <input
-            type="text"
-            id="nameInput"
-            placeholder="e.g. Noble, Orca, Ilham..."
-          />
+          <div class="name-block">
+            <div class="label-small">Name</div>
+            <div id="nameValue" class="name-text"></div>
+          </div>
 
-          <div class="identity-section">
-            <div class="row">
-              <span class="field-label">Identity:</span>
-              <span id="identityValue" class="field-value">-</span>
+          <div class="role-block">
+            <div class="label-small">Discord Role</div>
+            <div id="roleValue" class="role-text"></div>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="label-small">Vibe</div>
+              <div id="vibeValue" class="info-text"></div>
             </div>
-            <div class="row">
-              <span class="field-label">Role:</span>
-              <span id="roleValue" class="field-value">-</span>
-            </div>
-            <div class="row">
-              <span class="field-label">Vibe:</span>
-              <span id="vibeValue" class="field-value">-</span>
-            </div>
-            <div class="row">
-              <span class="field-label">Affinity:</span>
-              <span id="affinityValue" class="field-value">-</span>
+            <div class="info-item">
+              <div class="label-small">Affinity</div>
+              <div id="affinityValue" class="info-text"></div>
             </div>
           </div>
         </div>
 
         <div class="card-footer">
-          <button id="generateButton">Generate Identity</button>
-          <p class="disclaimer">
-            This is a fan-made tool for fun and community vibes. Not an official
-            Rialo role system.
-          </p>
+          <span class="footer-note">
+            Fan-made identity card for community fun. Not an official role.
+          </span>
         </div>
       </div>
     </main>
@@ -62,7 +82,7 @@
     <footer>
       <p>
         Built for Rialo Phase 2 ·
-        <a href="https://github.com/USERNAME/rialo-identity-generator" target="_blank">
+        <a href="https://github.com/tiramitsuETH/rialo-identity-generator" target="_blank">
           View on GitHub
         </a>
       </p>
